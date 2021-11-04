@@ -4,8 +4,10 @@ const app = express();
 const ShortUrl = require('./models/shortUrl')
 const cors = require("cors");
 require('dotenv').config()
+const db_Uri = 'mongodb+srv://Sagigo8:sagi1234@cluster0.moedg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
-mongoose.connect(process.env.DB_URI, {
+
+mongoose.connect(db_Uri, {
   useNewUrlParser: true, useUnifiedTopology: true
 }).then(()=>{
     console.log('connected to database successfully');
