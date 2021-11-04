@@ -46,7 +46,7 @@ table{
 <body>
   <div class="container">
     <h1 id="page-title" style="text-align: center;">URL Shrinker</h1>
-    <form action="/shortUrls" method="POST" class="my-4 form-inline">
+    <form action="https://urls-shrink.herokuapp.com/shortUrls" method="POST" class="my-4 form-inline">
       <label for="fullUrl" class="sr-only">Url</label>
       <input autocomplete="off" required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
       <button class="btn btn-lg" type="submit" id="button">Shrink</button>
@@ -68,13 +68,13 @@ table{
             <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
             <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
             <td><%= shortUrl.clicks %></td>
-            <form action="/clearone/<%= shortUrl.short %>" method="GET"><td><button type="submit" class="btn border-0 remove" >❌</button></td></form> 
+            <form action="https://urls-shrink.herokuapp.com/clearone/<%= shortUrl.short %>" method="GET"><td><button type="submit" class="btn border-0 remove" >❌</button></td></form> 
           </tr>
         <% }) %>
       </tbody>
     </table>
     <div class="text-center">
-      <form action="/clear" method="GET">
+      <form action="https://urls-shrink.herokuapp.com/clear" method="GET">
     <button class="btn btn-lg reset">Reset</button>
       </form>  
       </div>
